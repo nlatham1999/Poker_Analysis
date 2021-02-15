@@ -6,8 +6,9 @@ import copy
 import numpy as np
 import matplotlib.pyplot as plt
 
-# overall stats
+# Global Variables
 num_players = 5
+use_given_community_cards = False
 commmunity_cards_given = [
     {"rank": "10", "suit": "spades"},
     {"rank": "9", "suit": "spades"},
@@ -322,7 +323,10 @@ def main():
 
     for _ in range(0, 1000):  
         new_deck = copy.deepcopy(card_deck)
-        data = play_out_round(new_deck, num_players) #,commmunity_cards_given)
+        if use_given_community_cards:
+            data = play_out_round(new_deck, num_players, commmunity_cards_given)
+        else:
+            data = play_out_round(new_deck, num_players)
         for x in data:
             overall_data[x][data[x]] += 1
 
