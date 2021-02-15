@@ -6,5 +6,4 @@ The number of players can be adjusted
 
 The simmulation can be done with given or random community cards
 
-Shows the percentages that a hand will be available for x number of people
-results.png
+![Shows the percentages that a hand will be available for x number of people](results.png)
